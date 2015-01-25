@@ -75,6 +75,7 @@
 
     #searchdiv{
         float: left;
+        width: 100px;
         padding: 5px 0 0 10px;
     }
 
@@ -95,10 +96,120 @@
     #newsbar {
         background-color: #990000;
         width: 100%;
-        height: 80px;
+        height: 90px;
         color: white;
     }
 
+    #newsbar p {
+        margin: 0;
+        padding: 0;
+        padding-top: 10px;
+        float: left;
+    }
+
+    #newsheader {
+        font-size: 3em;
+    }
+
+    #uk {
+        font-size: 0.7em;
+        padding-left: 20px;
+    }
+
+    #rss {
+        float: right;
+        margin-top: 38px;
+    }
+
+    #rss img {
+        height: 14px;
+    }
+
+    #topicmenu {
+
+    }
+
+    #topicmenu ul {
+        background-color: #3E0C0D;
+        padding: 5px 0 0 5px;
+        margin: 0;
+        height: 20px;
+    }
+
+    #topicmenu li {
+        list-style: none;
+        font-size: 0.8em;
+        border-right: 1px solid #990000;
+        padding: 0 6px 0 6px;
+        float: left;
+        background-color: none;
+    }
+
+    .selected {
+        background-color: #EDEDED; 
+        color: #666666;
+        height: 20px;
+        position: relative;
+        top: -4px;
+        padding-top: 4px !important;
+    }
+
+    #content {
+        width: 100%;
+        color: #535353;
+        font-size: 0.75em;
+    }
+    .date {
+        font-weight: bold;
+    }
+
+    h1 {
+        color: #1F4F82;
+        font-size: 2.5em;
+    }
+
+    .headlineimage {
+        float: left;
+    }
+
+    .newsitem {
+        position: relative;
+        left: 10px;
+        top: -15px;
+        width: 280px;
+        float: left;
+        font-size: 1.1em;
+    }
+
+    .newsitem a {
+        color: #1F4FB2;
+        text-decoration: none;
+    }
+
+    .newsitem a:hover {
+        text-decoration: underline;
+    }
+
+
+    .video {
+        background-image: url("images/triangle.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 30px;
+    }
+
+    .links {
+        line-height: 1.6em;
+    }
+
+    /* The image isn't correct
+    .sound {
+    background-image: url("images/sound.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+}
+    */
     </style>
 
 </head>
@@ -118,7 +229,7 @@
             </div>
 
             <div id="signindiv">
-                <p><img src="images/signin.png" />Sign In</p>
+                <img src="images/signin.png" />Sign In
 
             </div>
 
@@ -152,8 +263,68 @@
 
                     <div class="fixedwidth">
 
+                        <p id = "newsheader">NEWS<span id = "uk">UK</span></p>
+
+                        <div id = "rss">
+                            RSS <img src = "images/rss.png" />
+                        </div>
+
+                        <div class="break"></div>
+
+                        <div id = "topicmenu">
+                            <ul>
+                                <li>Home</li>
+                                <li>World</li>
+                                <li class="selected">UK</li>
+                                <li>England</li>
+                                <li>N. Ireland</li>
+                                <li>Scotland</li>
+                                <li>Wales</li>
+                                <li>Business</li>
+                                <li>Politics</li>
+                                <li>Health</li>
+                                <li>Education</li>
+                                <li>Sci/Environment</li>
+                                <li>Technology</li>
+                                <li style="border-right: none">Arts & Entertainment</li>
+
+                            </ul>
+                        </div>
+
                     </div>
 
+            </div>
+
+            <div class="break"></div>
+
+            <div id= "content">
+
+                <div class= "fixedwidth">
+
+                    <p><span class= "date">2 April 2014 </span>Last updated at 15:32</p>
+
+                    <h1>Pollution to spread across England</h1>
+
+                    <img class= "headlineimage" src= "images/headlineimage.jpg"  width= "400px"/>
+
+                    <div class= "newsitem">
+
+                        <p>Health warnings have been issued by the government as pollution is spreading across England is forecast to hit high levels.</p>
+
+                        <p class= "links"> <a class= "video" href="">Why are pollution levels so high?</a><br />
+
+                        <a class= "video" href="">Saharan dust visible on cars</a><br />
+
+                        <a class= "video" href="">How Saharan dust reached the UK</a> </p>
+
+                        <a href="">What will pollution do to us?</a><br />
+                        <!-- picture isn't correct
+                        <a class= "sound" href="">Air pollution a 'serious issue'</a><br />
+                        -- >
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
