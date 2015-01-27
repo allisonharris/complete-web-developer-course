@@ -183,10 +183,13 @@
 
     .newsitem a {
         color: #1F4FB2;
+    }
+
+    a {
         text-decoration: none;
     }
 
-    .newsitem a:hover {
+    a:hover {
         text-decoration: underline;
     }
 
@@ -202,14 +205,72 @@
         line-height: 1.6em;
     }
 
-    /* The image isn't correct
     .sound {
     background-image: url("images/sound.png");
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 30px;
+
 }
-    */
+
+    #watchlisten {
+        background-color: #EEEEEE;
+        float: right;
+        width: 336px;
+        height: 300px;
+        position: relative;
+        top: -80px;
+    }
+    
+    h2 {
+        color: #505050;
+        margin: 10px 0 10px 10px;
+        font-size: 1.8em;
+    }
+
+    .boxes {
+        float: right;
+        margin: 20px 10px 0 0;
+    }
+
+    .leftarrow {
+        float: left;
+        border-right: 1px solid white;
+    }
+
+    .wlblock {
+        float: left;
+        background-color: #D1700E;
+        width: 143px;
+        border-right: 1px solid white;
+    }
+
+    .wlblock a {
+        color: white;
+    }
+
+    .wlblock p {
+        margin: 5px 10px 5px 10px;
+    }
+
+    #watchlisten ul {
+        margin: 0;
+        padding: 0 10px 10px 10px;
+    }
+
+    #watchlisten li {
+        list-style: none;
+        background-image: url("images/live.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding: 10px 0 10px 50px;
+        font-size: 1.1em;
+    }
+
+    .bb {
+        border-bottom: 1px solid #DDDDDD;
+    }
+
     </style>
 
 </head>
@@ -318,9 +379,45 @@
                         <a class= "video" href="">How Saharan dust reached the UK</a> </p>
 
                         <a href="">What will pollution do to us?</a><br />
-                        <!-- picture isn't correct
+                       
                         <a class= "sound" href="">Air pollution a 'serious issue'</a><br />
-                        -- >
+                        </p>
+
+                    </div>
+
+                    <div id= "watchlisten">
+
+                        <img src="images/boxes.png" class="boxes" />
+
+                        <h2>Watch/Listen</h2>
+
+                        <img src="images/leftarrow.png" class="leftarrow">
+
+                        <div class="wlblock">
+
+                            <img src="images/pic1.png">
+
+                            <p><a href="">Sleeping shelter removed by council</a></p>
+                        </div>
+
+                        <div class="wlblock">
+                            <img src="images/pic2.png">
+
+                            <p><a href="">Man interrupts woman bishop ceremony</a></p>
+
+                        </div>
+
+                        <img src="images/rightarrow.png" class="rightarrow">
+
+                        <ul>
+
+                            <li class="bb"><a href="">BBC News Channel</a></li>
+
+                            <li class="bb"><a href="">Radio 5 live</a></li>
+
+                            <li><a href="">Osborne questioned on budget</a></li>
+
+                        </ul>
 
                     </div>
 
