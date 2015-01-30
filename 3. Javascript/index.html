@@ -13,6 +13,12 @@
 
 <body>
 
+    <input id="myInput" type="text" value="test"/>
+
+    <button id="stylesChanger">Change the text!</button>
+
+    <div id="divStyle">This is some text.</div>
+
     <button id="textChanger">Change first div text</button>
 
     <div id="firstDiv">This is some text.</div>
@@ -25,22 +31,38 @@
 
     <div id="emptyDiv"></div>
 
+
     <script type="text/javascript">
+
+        // change div styles
+        var newText=document.getElementById("myInput").value;
+
+        document.getElementById("stylesChanger").onclick=function() {
+
+            newText=document.getElementById("myInput").value;
+
+            document.getElementById("divStyle").innerHTML=newText;
+        }
+
+        //change text
 
         document.getElementById("textChanger").onclick=function() {
 
             document.getElementById("firstDiv").innerHTML="This is awesome";
         }
 
+        // add to text
         document.getElementById("textAppender").onclick=function() {
 
             document.getElementById("secondDiv").innerHTML=document.getElementById("secondDiv").innerHTML + "great!";
         }
 
+        // create new text
         document.getElementById("textCreator").onclick=function() {
 
             document.getElementById("emptyDiv").innerHTML="<ul><li>Cat</li><li>Dog</li></ul>";
         }
+
 
     </script>
 
