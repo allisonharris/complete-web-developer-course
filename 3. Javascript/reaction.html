@@ -26,26 +26,38 @@
 
 <body>
 
+    <p>Your time: <span id ="time"></span></p>
+
     <div id="square"></div>
 
 
     <script type="text/javascript">
 
+        var clickedTime; var createdTime; var reactionTime;
+
         function makeBox() {
 
             var time = Math.random();
             time = 5000 * time;
-            time = Math.floor(time);
 
             setTimeout(function() {
 
                 document.getElementById("square").style.display="block";
+
+                createdTime=Date.now();
 
             }, time);
 
         }
 
         document.getElementById("square").onclick=function() {
+            
+            clickedTime=Date.now();
+
+            reactionTime=(clickedTime-createdTime)/1000;
+
+            document.getElementById("time").innerHTML=reactionTime+" seconds";
+
             // this is a shortcut to refer to the aforementioned id
             this.style.display="none";
 
