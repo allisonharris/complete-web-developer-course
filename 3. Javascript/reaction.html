@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Learning CSS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+</head>
+
+<style>
+
+#square {
+
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    display: none;
+}
+
+
+</style>
+
+<body>
+
+    <div id="square"></div>
+
+
+    <script type="text/javascript">
+
+        function makeBox() {
+
+            var time = Math.random();
+            time = 5000 * time;
+            time = Math.floor(time);
+
+            setTimeout(function() {
+
+                document.getElementById("square").style.display="block";
+
+            }, time);
+
+        }
+
+        document.getElementById("square").onclick=function() {
+            // this is a shortcut to refer to the aforementioned id
+            this.style.display="none";
+
+            makeBox();
+        }
+
+        makeBox();
+
+
+
+
+    </script>
+
+</body>
+</html>
