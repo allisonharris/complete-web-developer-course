@@ -13,34 +13,81 @@
 
 <style>
 
-#square {
+    body {
 
-    background-color: red;
-    height: 100px;
-    width: 100px;
-    display: none;
-}
+        font-family: Verdana, Geneva, sans-serif;
+    }
 
+    #square {
+
+        background-color: red;
+        height: 200px;
+        width: 200px;
+        display: none;
+        position: relative;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
 
 </style>
 
 <body>
 
-    <p>Your time: <span id ="time"></span></p>
+    <h1>Test your reactions!</h1>
+
+    <p>Click on the boxes and circles as fast as you can.</p>
+
+    <p class="bold">Your time: <span id ="time"></span></p>
 
     <div id="square"></div>
 
 
     <script type="text/javascript">
 
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+
         var clickedTime; var createdTime; var reactionTime;
 
         function makeBox() {
 
             var time = Math.random();
-            time = 5000 * time;
+            time = 2000 * time;
 
             setTimeout(function() {
+
+                if (Math.random() > 0.5) {
+
+                    document.getElementById("square").style.borderRadius="100px";
+                }
+
+                else {
+
+                    document.getElementById("square").style.borderRadius="0";
+                }
+
+                var top = Math.random();
+
+                top = top * 300;
+
+                var left = Math.random();
+
+                left = left * 500;
+
+                document.getElementById("square").style.top=top+"px";
+
+                document.getElementById("square").style.left=left+"px";
+
+                document.getElementById("square").style.backgroundColor=getRandomColor();
 
                 document.getElementById("square").style.display="block";
 
