@@ -10,22 +10,53 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
+    <style>
+
+        #circle {
+
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: green;
+        }
+
+        .square {
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 10px;
+        }
+
+
+    </style>
+
 
 </head>
 
 <body>
 
+    <div id="circle"></div>
+
+    <div class="square"></div>
+
+    <div class="square"></div>
+
+    <p class="link"><a href="http://www.google.com">Google</a></p>
+
     <script>
 
-        if (typeof jQuery != "undefined") {
+        $("#circle").click(function () {
 
-            alert('JQuery is installed!');
-        }
+            alert("Circle clicked!");
 
-        else {
+        });
 
-            alert('JQuery is not installed!');
-        }
+        $(".link").click(function () {
+
+            alert("Link clicked!");
+
+        });
 
     </script>
 
