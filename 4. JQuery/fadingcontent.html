@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <style>
+
+        #circle {
+
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: green;
+        }
+
+        .square {
+
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin-top: 10px;
+        }
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <p>This text will go away when you click the button.</p>
+
+    <button id="fader">Fade Out</button>
+
+    <button id="faderIn">Fade In</button>
+
+    <script>
+
+        $("#fader").click(function() {
+
+            $("p").fadeOut("slow", function () {
+
+                alert("fadeOut complete!");
+                
+            });
+
+        });
+
+        $("#faderIn").click(function() {
+
+            $("p").fadeIn();
+
+        });
+
+    </script>
+
+</body>
+</html>
