@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+
+      <style>
+
+        #square {
+          height:200px;
+          width: 200px;
+          background-color: gray;
+        }
+
+        #target {
+          height:300px;
+          width: 300px;
+          background-color: yellow
+        }
+
+      </style>
+
+</head>
+
+<body>
+
+  <ul>
+
+    <li>Pizza</li>
+    <li>Cheese</li>
+    <li>Tomatoes</li>
+    <li>Chocolate</li>
+
+  </ul>
+
+  <script>
+
+    $("ul").sortable();
+
+  </script>
+
+
+</body>
+</html>
