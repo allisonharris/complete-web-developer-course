@@ -174,7 +174,7 @@
 
       <div class="codeLabel">HTML</div>
 
-      <textarea>Sample Code</textarea>
+      <textarea id="htmlCode" placeholder="enter HTML here"></textarea>
 
     </div>
 
@@ -183,7 +183,7 @@
 
       <div class="codeLabel">CSS</div>
 
-      <textarea>Sample Code</textarea>
+      <textarea id="cssCode" placeholder="enter CSS here"></textarea>
 
     </div>
 
@@ -193,7 +193,7 @@
 
       <div class="codeLabel">JS</div>
 
-      <textarea>Sample Code</textarea>
+      <textarea id="jsCode" placeholder="note that JavaScript functionality will not work in this version due to security risks with eval()"></textarea>
 
     </div>
 
@@ -203,7 +203,7 @@
 
       <div class="codeLabel">Result</div>
 
-      <iframe></iframe>
+      <iframe id="resultFrame"></iframe>
 
     </div>
 
@@ -226,11 +226,12 @@
 
       var activeDiv = $(this).html();
 
-      $("#"+activeDiv+"Container").toggle();
+      $("#" + activeDiv + "Container").toggle();
 
-      var showingDivs=$(".codeContainer").filter(function() {
+      var showingDivs = $(".codeContainer").filter(function() {
 
-        return($(this).css("display")!="none");
+        return ($(this).css("display")!="none");
+
       }).length;
 
       var width = 100/showingDivs;
@@ -238,6 +239,16 @@
       $(".codeContainer").css("width", width+"%");
 
     });
+
+    $("#runButton").click(function() {
+
+      $("iframe").contents().find("html").html('<style>' + $("#cssCode").val() + '</style>' + $("#htmlCode").val());
+
+    });
+
+    /* commented out to protected security
+    document.getElementById("resultFrame").contentWindow.eval($("#jsCode").val());
+    */
 
   </script>
 
