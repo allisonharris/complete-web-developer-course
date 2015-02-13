@@ -56,7 +56,7 @@
         }
 
         #toggles {
-          width: 200px;
+          width: 193.5px;
           margin: 0 auto;
           list-style: none;
           border: 1px solid gray;
@@ -89,6 +89,7 @@
           height: 100%;
           border: none;
           border-right: 1px solid gray;
+          box-sizing: border-box;
           font-family: monotype;
           font-size: 100%;
           padding: 5px;
@@ -100,7 +101,7 @@
           right: 10px;
         }
 
-        #cssContainer, #jsContainer {
+        #CSSContainer, #JSContainer {
           display: none;
         }
 
@@ -109,6 +110,10 @@
           position: relative;
           left: 20px;
           border: none;
+        }
+
+        .selected {
+          background-color: gray;
         }
 
       </style>
@@ -135,10 +140,10 @@
 
       <ul id="toggles">
 
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li style="border:none">Result</li>
+        <li class="toggle selected">HTML</li>
+        <li class="toggle">CSS</li>
+        <li class="toggle">JS</li>
+        <li class="toggle selected" style="border:none">Result</li>
 
       </ul>
       
@@ -165,7 +170,7 @@
 
     <div class="clear"></div>
 
-    <div class="codeContainer" id="htmlContainer">
+    <div class="codeContainer" id="HTMLContainer">
 
       <div class="codeLabel">HTML</div>
 
@@ -174,7 +179,7 @@
     </div>
 
 
-    <div class="codeContainer" id="cssContainer">
+    <div class="codeContainer" id="CSSContainer">
 
       <div class="codeLabel">CSS</div>
 
@@ -184,7 +189,7 @@
 
 
 
-    <div class="codeContainer" id="jsContainer">
+    <div class="codeContainer" id="JSContainer">
 
       <div class="codeLabel">JS</div>
 
@@ -194,7 +199,7 @@
 
 
 
-    <div class="codeContainer" id="resultContainer">
+    <div class="codeContainer" id="ResultContainer">
 
       <div class="codeLabel">Result</div>
 
@@ -215,6 +220,24 @@
 
     $(".codeContainer").height(codeContainerHeight + "px");
     
+    $(".toggle").click(function() {
+
+      $(this).toggleClass("selected");
+
+      var activeDiv = $(this).html();
+
+      $("#"+activeDiv+"Container").toggle();
+
+      var showingDivs=$(".codeContainer").filter(function() {
+
+        return($(this).css("display")!="none");
+      }).length;
+
+      var width = 100/showingDivs;
+
+      $(".codeContainer").css("width", width+"%");
+
+    });
 
   </script>
 
