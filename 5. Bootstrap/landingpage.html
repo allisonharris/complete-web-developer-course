@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hopscotch</title>
+    <title>MyApp</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
       #topContainer {
         background-image: url("chalk.jpg");
         width: 100%;
-        height: 800px;
+        height: 400px;
         background-size: cover;
       }
 
@@ -51,6 +51,15 @@
         margin-top: 30px;
       }
 
+      .center {
+        text-align: center;
+      }
+
+      .title {
+        margin-top: 100px;
+        font-size: 300%;
+      }
+
     </style>
 
   </head>
@@ -62,7 +71,7 @@
 
         <div class="navbar-header">
 
-          <a href="" class="navbar-brand">Hopscotch</a>
+          <a href="" class="navbar-brand">MyApp</a>
 
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 
@@ -130,38 +139,80 @@
 
     </div>
 
-    <div class="container" id="topContainer">
+    <div class="container contentContainer" id="topContainer">
 
       <div class="row">
 
           <div class="col-md-6 col-md-offset-3" id="topRow">
 
-            <h1>My Awesome App</h1>
+            <h1 class="marginTop">My Awesome App</h1>
 
             <p class="lead">This is why you should download this fantastic app.</p>
 
-            <p>Some more information about the app.  You can go into a little mmore detail here if you want to.</p>
+            <p>Some more information about the app.  You can go into a little more detail here if you want to.</p>
 
             <p class="bold marginTop">Interested? Join our mailing list!</p>
+
+            <form class="marginTop">
+
+              <div class="input-group">
+
+                <span class="input-group-addon">@</span>
+
+                <input type="email" class="form-control" placeholder="your email"/>
+
+              </div>
+
+                <input type="submit" class="btn btn-success btn-lg marginTop"/>
+
+
+            </form>
 
           </div>
 
       </div>
 
-      <form>
 
-        <div class="input-group">
+    </div>
 
-          <span class="input-group-addon">@</span>
 
-          <input type="email" class="form-control" placeholder="your email"/>
+    <div class="container contentContainer">
+
+      <div class="row">
+
+        <h1 class="center title">Why This App Is Awesome</h1>
+
+        <p class="lead center marginTop">Summary of the app's awesomeness</p>
+
+        <div class="row">
+
+          <div class="col-md-4 marginTop">
+            <h2><span class="glyphicon glyphicon-leaf"> Header</span></h2>
+            <p>A brief description of one of the best features of your app.  Maybe a little more text. A brief description of one of the best features of your app.  Maybe a little more text.<p>
+
+            <button class="btn btn-success marginTop">Sign up!</button>
+          </div>
+
+          <div class="col-md-4 marginTop">
+            <h2><span class="glyphicon glyphicon-music"> Header</span></h2>
+            <p>A brief description of one of the best features of your app.  Maybe a little more text. A brief description of one of the best features of your app.  Maybe a little more text.<p>
+
+            <button class="btn btn-success marginTop">Sign up!</button>
+          </div>
+
+          <div class="col-md-4 marginTop">
+            <h2><span class="glyphicon glyphicon-certificate"> Header</span></h2>
+            <p>A brief description of one of the best features of your app.  Maybe a little more text. A brief description of one of the best features of your app.  Maybe a little more text.<p>
+
+            <button class="btn btn-success marginTop">Sign up!</button>
+
+          </div>
+
 
         </div>
 
-          <input type="submit" class="btn btn-success btn-lg marginTop"/>
 
-
-      </form>
+      </div>
 
 
     </div>
@@ -173,8 +224,9 @@
 
     <script>
 
-      $("#topContainer").css("height",$("window").height());
+      $(".contentContainer").css("min-height",$("window").height());
 
     </script>
+
   </body>
 </html>
