@@ -2,7 +2,53 @@
 
 	if ($_POST["submit"]) {
 
-		$result='<div class="alert alert-success"> Form submitted</div>';
+
+		if (!$POST['name']) {
+
+			$error="<br />Please enter your name";
+
+		}
+
+		if (!$POST['email']) {
+
+			$error.="<br />Please enter your email address";
+			
+		}
+
+		if (!$POST['comment']) {
+
+			$error.="<br />Please enter a comment";
+			
+		}
+
+		if ($_POST['email'] !="" AND !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+
+			$error.="<br />Please enter a valid email address";
+		}
+
+		if ($error) {
+
+			$result='<div class="alert alert-danger"><strong>There were error(s) in your form:</strong>'.$error'</div>';
+		}
+
+		else {
+
+			if (mail("test@allisoncodes.com", "Comment from website!", "Name: ".$_POST['name']." 
+
+				Email: ".$_POST['email']."
+
+				Comment: ".$_POST['comment'])
+
+				) {
+
+				$result='<div class="alert alert-success"><strong>Thank you! I will be in touch.</strong></div>';
+			}
+
+			else {
+
+				$result='<div class="alert alert-danger">Sorry, there was an error sending your message. Plese try again later.</div>';
+			}
+		}
 	}
 ?>
 
@@ -75,7 +121,7 @@
 
 						<label for="name">
 
-						<input type="text" name="name" class="form-control" placeholder="Your Name" />
+						<input type="text" name="name" class="form-control" placeholder="Your Name" value="<?php echo $_POST['name'; ?>" />
 
 						</label>
 
@@ -85,7 +131,7 @@
 
 						<label for="email">
 
-						<input type="email" name="email" class="form-control" placeholder="Your Email" />
+						<input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $_POST['email'; ?>" />
 
 						</label>
 
@@ -95,7 +141,7 @@
 
 						<label for="comment">
 
-						<textarea class="form-control" name="comment"></textarea>
+						<textarea class="form-control" name="comment"><?php echo $_POST['comment'; ?> </textarea>
 
 						</label>
 
