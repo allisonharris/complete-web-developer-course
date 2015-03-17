@@ -32,6 +32,15 @@
         text-align: center;
     }
 
+    p {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    button {
+        margin-top: 40px;
+    }
+
 
 
 </style>
@@ -54,7 +63,7 @@
 
                     <div class="form-group">
 
-                        <input type="text" class="form-control" name="city" id="city" />
+                        <input type="text" class="form-control" name="city" id="city" placeholder="Ex: London, Paris, San Francisco..."/>
 
                         <button class="btn btn-success btn-lg">Get My Weather</button>
 
